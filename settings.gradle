@@ -1,2 +1,3 @@
 rootProject.name = "TuyaDependencies"
 include ':app'
+include ':TuyaDeviceActivatorSDK'

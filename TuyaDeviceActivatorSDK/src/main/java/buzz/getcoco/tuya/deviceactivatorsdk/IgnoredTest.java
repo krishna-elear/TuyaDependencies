@@ -1,4 +1,4 @@
-package buzz.getcoco.tuya.dependencies;
+package buzz.getcoco.tuya.deviceactivatorsdk;
 
 import android.util.Log;
 

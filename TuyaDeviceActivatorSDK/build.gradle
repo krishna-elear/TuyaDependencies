@@ -1,5 +1,5 @@
 plugins {
-  id 'com.android.application'
+  id 'com.android.library'
 }
 
 android {
@@ -7,13 +7,18 @@ android {
   buildToolsVersion "30.0.3"
 
   defaultConfig {
-    applicationId "buzz.getcoco.tuya.dependencies"
     minSdkVersion 21
     targetSdkVersion 30
     versionCode 1
     versionName "1.0"
 
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    consumerProguardFiles "consumer-rules.pro"
+
+    // CAUTION: hack for using tuya library
+    packagingOptions {
+      pickFirst "**/libc++_shared.so"
+    }
   }
 
   buildTypes {
@@ -35,4 +40,6 @@ dependencies {
   testImplementation 'junit:junit:4.13.2'
   androidTestImplementation 'androidx.test.ext:junit:1.1.2'
   androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+  implementation 'com.tuya.smart:deviceActivator:3.15.4'
 }
